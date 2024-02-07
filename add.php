@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/addEmployee.css">
     <title>Add Employee</title>
+<<<<<<< HEAD:add.php
 </head> 
     <style>
         
@@ -68,6 +70,10 @@
             background-color: #555;
         }
     </style>
+=======
+    
+</head>
+>>>>>>> 75b527c4eadceae32045dd3e8f2b3896ec897bd3:addEmployee.php
 <body>
     <header class="header">
         <nav class="nav">
@@ -78,22 +84,35 @@
     
     <div class="card">
         <h2>Add Employee</h2>
-        <form method="post" id="employeeForm" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <label for="employeeID">Teacher ID:</label>
+        <form method="post" id="employeeForm">
+            <label for="employeeID">Employee ID:</label>
             <input type="text" id="ID" name="ID" required>
 
             <label for="employeeName">Employee First Name:</label>
             <input type="text" id="First_Name" name="First_Name" required>
 
-            <label for="EmployeeName">Employee Middle Name:</label>
+            <label for="employeeName">Employee Middle Name:</label>
             <input type="text" id="Middle_Name" name="Middle_Name" required>
 
             <label for="employeeName">Employee Last Name:</label>
             <input type="text" id="Last_Name" name="Last_Name" required>
 
-            <label for="Job_Description">Job Description:</label>
+            <label for="AGE">Age:</label>
+            <input type="text" id="Age" name="Age" required>
 
-            <input type="hidden" name="action" value="update">
+            <label for="Contact Number">Contact Number:</label>
+            <input type="text" id="Contact_Number" name="Contact_Number" required>
+
+            <label for="Job_Description">Job Description:</label>
+            <input type="text" id="Job_Description" name="Job_Description" required>
+
+            <label for="Address">Adress:</label>
+            <input type="text" id="Address" name="Address" required>
+
+            <label for="Salary">Salary:</label>
+            <input type="text" id="Salary" name="Salary" required>
+            <br>
+            <input type="hidden" name="action" value="insert">
             <button type="submit" value="submit">Submit</button>
         </form>
     </div>
@@ -104,7 +123,7 @@
     $conn = connectToDatabase();
 
     // Handle form submissions
-    handleFormSubmissionteacher($conn);
+    handleFormSubmissionEmployee($conn);
 
     // Close the database connection
     $conn->close();

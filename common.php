@@ -49,9 +49,9 @@ ini_set('memory_limit', '512M');
 
 function connectToDatabase(){
     $servername = "localhost";
-    $username = "root";
-    $password = " ";
-    $dbname = "attendance monitoring";
+    $username = "Radge";
+    $password = "1234453";
+    $dbname = "ems";
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -106,7 +106,7 @@ function executeQuery($conn, $sql, $params = []){
     }    
 }
 function displayEmployeeData($conn) {
-    $sql_select = "SELECT * FROM teachers";
+    $sql_select = "SELECT * FROM employee";
     $result = executeQuery($conn, $sql_select);
 
     if ($result->num_rows > 0) {
@@ -117,8 +117,11 @@ function displayEmployeeData($conn) {
                 <th>First Name</th>
                 <th>Middle Name</th>
                 <th>Last Name</th>
+                <th>Age</th>
+                <th>Contact Number</th>
                 <th>Job Description</th>
-                <th>Attendance Status</th>
+                <th>Address</th>
+                <th>Salary</th>
                 <th>Action</th>
               </tr>";
         echo "</thead>";
@@ -130,11 +133,11 @@ function displayEmployeeData($conn) {
             echo "<td>" . $row["First_Name"] . "</td>";
             echo "<td>" . $row["Middle_Name"] . "</td>";
             echo "<td>" . $row["Last_Name"] . "</td>";
+            echo "<td>" . $row["Age"] . "</td>";
+            echo "<td>" . $row["Contact_Number"] . "</td>";
             echo "<td>" . $row["Job_Description"] . "</td>";
-            echo "<td>";
-            echo "<label><input type='checkbox' name='attendanceCheck[]' value='Present'> Present</label><br>";
-            echo "<label><input type='checkbox' name='attendanceCheck[]' value='Absent'> Absent</label><br>";
-            echo "</td>";
+            echo "<td>" . $row["Address"] . "</td>";
+            echo "<td>" . $row["Salary"] . "</td>";
             echo "<td>
                     <form action='updateteacherdata.php' method='get'>
                         <input type='hidden' name='id' value='" . $row["ID"] . "'>
@@ -157,7 +160,7 @@ function displayEmployeeData($conn) {
         echo "No records found.";
     }
 }
-function handleFormSubmissionteacher($conn){
+function handleFormSubmissionEmployee($conn){
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -167,14 +170,18 @@ function handleFormSubmissionteacher($conn){
         $First_Name = $_POST["First_Name"] ?? '';
         $Middle_Name = $_POST["Middle_Name"] ?? '';
         $Last_Name = $_POST["Last_Name"] ?? '';
+        $Age = $_POST["Age"] ?? '';
+        $Contact_Number =  $_POST["Contact_Number"] ?? '';
         $Job_Description = $_POST["Job_Description"] ?? '';
+        $Address = $_POST["Address"] ?? '';
+        $Salary = $_POST["Salary"] ?? '';
         $action = $_POST["action"] ?? '';
 
         // Validate the action and handle accordingly
         if ($action == "insert") {
-            $sql = "INSERT INTO teachers (ID, First_Name, Middle_Name, Last_Name, Job_Description) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO employee (ID, First_Name, Middle_Name, Last_Name, Age, Contact_Number, Job_Description, Address, Salary) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssss", $ID, $First_Name, $Middle_Name, $Last_Name, $Job_Description);
+            $stmt->bind_param("sssssssss", $ID, $First_Name, $Middle_Name, $Last_Name, $Age, $Contact_Number, $Job_Description, $Address, $Salary);
             if ($stmt->execute()) {
                 // Successful insertion
             } else {
@@ -183,7 +190,7 @@ function handleFormSubmissionteacher($conn){
             $stmt->close();
         } elseif ($action == "update") {
             $newID = $_POST["newID"] ?? ''; 
-            $sql = "UPDATE teachers SET ID=?, First_Name=?, Middle_Name=?, Last_Name=?, Job_Description=? WHERE ID=?";
+            $sql = "UPDATE employee SET ID=?, First_Name=?, Middle_Name=?, Last_Name=?, Job_Description=? WHERE ID=?";
         
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ssssss", $newID, $First_Name, $Middle_Name, $Last_Name, $Job_Description, $ID);
@@ -194,7 +201,7 @@ function handleFormSubmissionteacher($conn){
             }
             $stmt->close(); 
         } elseif ($action == "delete") {
-            $sql = "DELETE FROM teachers WHERE ID=?";
+            $sql = "DELETE FROM employee WHERE ID=?";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("s", $ID);
             if ($stmt->execute()) {

@@ -39,21 +39,7 @@
         </nav>
     </header>
     <br>
- <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Age</th>
-      <th scope="col">Contact No.</th>
-      <th scope="col">Job Description</th> 
-      <th scope="col">Address</th>  
-    </tr>
-  </thead>
-  
-</table>
-
+    <br>
     <?php
     // Include common functions and connect to the database
     include 'common.php';
@@ -61,6 +47,9 @@
 
     // Handle The display of data
     displayEmployeeData($conn);
+
+    //Handle Form Submission
+    handleFormSubmissionEmployee($conn);
 
     // Close the database connection
     $conn->close();

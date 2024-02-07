@@ -44,7 +44,11 @@ body {
 
 <div class="sidebar">
   <a href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
+<<<<<<< HEAD
   <a href="add.php"><i class="fa fa-fw fa-plus"></i> Add Employee</a>
+=======
+  <a href="addEmployee.php"><i class="fa fa-fw fa-plus"></i> Add Employee</a>
+>>>>>>> 75b527c4eadceae32045dd3e8f2b3896ec897bd3
   <a href="view.php"><i class="fa fa-fw fa-list"></i> View Employee</a>
 </div>
 
