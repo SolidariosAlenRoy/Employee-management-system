@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Employee</title>
+</head> 
     <style>
+        
         body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
+            font-family: "Lato", sans-serif;
+            background-color: #f4eee1;
         }
 
         .header {
             background-color: #333;
             color: white;
-            text-align: center;
             padding: 1em;
         }
 
@@ -26,8 +25,10 @@
         }
 
         .nav a {
+            color: #fff;
             text-decoration: none;
-            color: white;
+
+            margin: 0 250px;
         }
 
         .card {
@@ -67,12 +68,11 @@
             background-color: #555;
         }
     </style>
-</head>
 <body>
     <header class="header">
         <nav class="nav">
             <a href="index.php">HOME</a>
-            <a href="viewEmployee.php">View List</a>
+            <a href="view.php">View List</a>
         </nav>
     </header>
     
