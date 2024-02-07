@@ -31,7 +31,6 @@
 
             margin: 0 250px;
         }
-
         .card {
             width: 50%;
             margin: 2em auto;
@@ -81,49 +80,29 @@
     
     <div class="card">
         <h2>Add Employee</h2>
-<<<<<<< HEAD:addEmployee.php
         <form method="post" id="employeeForm" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-=======
         <form method="post" id="employeeForm">
->>>>>>> 0b007baa519c1c3fe07946c9cffb321be2e9182d:add.php
+
             <label for="employeeID">Employee ID:</label>
             <input type="text" id="ID" name="ID" required>
 
-            <label for="employeeName">First Name:</label>
+            <label for="firstName">First Name:</label>
             <input type="text" id="First_Name" name="First_Name" required>
 
-<<<<<<< HEAD:addEmployee.php
-            <label for="EmployeeName">Last Name:</label>
-=======
-            <label for="employeeName">Employee Middle Name:</label>
->>>>>>> 0b007baa519c1c3fe07946c9cffb321be2e9182d:add.php
-            <input type="text" id="Middle_Name" name="Middle_Name" required>
-
-            <label for="employeeName">Age:</label>
+            <label for="lastName">Last Name:</label>
             <input type="text" id="Last_Name" name="Last_Name" required>
 
-            <label for="employeeName">Address:</label>
-            <input type="text" id="Last_Name" name="Last_Name" required>
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required>
 
-            <label for="employeeName">Contact Number:</label>
-            <input type="text" id="Last_Name" name="Last_Name" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
 
-<<<<<<< HEAD:addEmployee.php
-            <label for="Job_Description">Job Description:</label>
-            <input type="text" id="Job_Description" name="Job_Description" required>
-=======
-            <label for="AGE">Age:</label>
-            <input type="text" id="Age" name="Age" required>
->>>>>>> 0b007baa519c1c3fe07946c9cffb321be2e9182d:add.php
-
-            <label for="Contact Number">Contact Number:</label>
+            <label for="contactNumber">Contact Number:</label>
             <input type="text" id="Contact_Number" name="Contact_Number" required>
 
             <label for="Job_Description">Job Description:</label>
             <input type="text" id="Job_Description" name="Job_Description" required>
-
-            <label for="Address">Adress:</label>
-            <input type="text" id="Address" name="Address" required>
 
             <label for="Salary">Salary:</label>
             <input type="text" id="Salary" name="Salary" required>
