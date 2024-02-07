@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/addEmployee.css">
     <title>Add Employee</title>
-<<<<<<< HEAD:add.php
 </head> 
     <style>
         
@@ -70,10 +69,8 @@
             background-color: #555;
         }
     </style>
-=======
     
 </head>
->>>>>>> 75b527c4eadceae32045dd3e8f2b3896ec897bd3:addEmployee.php
 <body>
     <header class="header">
         <nav class="nav">
