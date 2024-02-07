@@ -43,9 +43,9 @@ body {
 <body>
 
 <div class="sidebar">
-  <a href=""><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
   <a href=""><i class="fa fa-fw fa-plus"></i> Add Employee</a>
-  <a href=""><i class="fa fa-fw fa-list"></i> View Employee</a>
+  <a href="view.php"><i class="fa fa-fw fa-list"></i> View Employee</a>
 </div>
 
      
