@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/addEmployee.css">
     <title>Add Employee</title>
+<<<<<<< HEAD:add.php
+</head> 
     <style>
+        
         body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
+            font-family: "Lato", sans-serif;
+            background-color: #f4eee1;
         }
 
         .header {
             background-color: #333;
             color: white;
-            text-align: center;
             padding: 1em;
         }
 
@@ -26,8 +27,10 @@
         }
 
         .nav a {
+            color: #fff;
             text-decoration: none;
-            color: white;
+
+            margin: 0 250px;
         }
 
         .card {
@@ -67,25 +70,36 @@
             background-color: #555;
         }
     </style>
+=======
+    
 </head>
+>>>>>>> 75b527c4eadceae32045dd3e8f2b3896ec897bd3:addEmployee.php
 <body>
     <header class="header">
         <nav class="nav">
             <a href="index.php">HOME</a>
-            <a href="viewEmployee.php">View List</a>
+            <a href="view.php">View List</a>
         </nav>
     </header>
     
     <div class="card">
         <h2>Add Employee</h2>
+<<<<<<< HEAD:addEmployee.php
         <form method="post" id="employeeForm" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+=======
+        <form method="post" id="employeeForm">
+>>>>>>> 0b007baa519c1c3fe07946c9cffb321be2e9182d:add.php
             <label for="employeeID">Employee ID:</label>
             <input type="text" id="ID" name="ID" required>
 
             <label for="employeeName">First Name:</label>
             <input type="text" id="First_Name" name="First_Name" required>
 
+<<<<<<< HEAD:addEmployee.php
             <label for="EmployeeName">Last Name:</label>
+=======
+            <label for="employeeName">Employee Middle Name:</label>
+>>>>>>> 0b007baa519c1c3fe07946c9cffb321be2e9182d:add.php
             <input type="text" id="Middle_Name" name="Middle_Name" required>
 
             <label for="employeeName">Age:</label>
@@ -97,10 +111,27 @@
             <label for="employeeName">Contact Number:</label>
             <input type="text" id="Last_Name" name="Last_Name" required>
 
+<<<<<<< HEAD:addEmployee.php
+            <label for="Job_Description">Job Description:</label>
+            <input type="text" id="Job_Description" name="Job_Description" required>
+=======
+            <label for="AGE">Age:</label>
+            <input type="text" id="Age" name="Age" required>
+>>>>>>> 0b007baa519c1c3fe07946c9cffb321be2e9182d:add.php
+
+            <label for="Contact Number">Contact Number:</label>
+            <input type="text" id="Contact_Number" name="Contact_Number" required>
+
             <label for="Job_Description">Job Description:</label>
             <input type="text" id="Job_Description" name="Job_Description" required>
 
-            <input type="hidden" name="action" value="update">
+            <label for="Address">Adress:</label>
+            <input type="text" id="Address" name="Address" required>
+
+            <label for="Salary">Salary:</label>
+            <input type="text" id="Salary" name="Salary" required>
+            <br>
+            <input type="hidden" name="action" value="insert">
             <button type="submit" value="submit">Submit</button>
         </form>
     </div>
@@ -111,7 +142,7 @@
     $conn = connectToDatabase();
 
     // Handle form submissions
-    handleFormSubmissionteacher($conn);
+    handleFormSubmissionEmployee($conn);
 
     // Close the database connection
     $conn->close();
