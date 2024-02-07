@@ -79,19 +79,26 @@
     <div class="card">
         <h2>Add Employee</h2>
         <form method="post" id="employeeForm" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <label for="employeeID">Teacher ID:</label>
+            <label for="employeeID">Employee ID:</label>
             <input type="text" id="ID" name="ID" required>
 
-            <label for="employeeName">Employee First Name:</label>
+            <label for="employeeName">First Name:</label>
             <input type="text" id="First_Name" name="First_Name" required>
 
-            <label for="EmployeeName">Employee Middle Name:</label>
+            <label for="EmployeeName">Last Name:</label>
             <input type="text" id="Middle_Name" name="Middle_Name" required>
 
-            <label for="employeeName">Employee Last Name:</label>
+            <label for="employeeName">Age:</label>
+            <input type="text" id="Last_Name" name="Last_Name" required>
+
+            <label for="employeeName">Address:</label>
+            <input type="text" id="Last_Name" name="Last_Name" required>
+
+            <label for="employeeName">Contact Number:</label>
             <input type="text" id="Last_Name" name="Last_Name" required>
 
             <label for="Job_Description">Job Description:</label>
+            <input type="text" id="Job_Description" name="Job_Description" required>
 
             <input type="hidden" name="action" value="update">
             <button type="submit" value="submit">Submit</button>
