@@ -115,7 +115,6 @@ function displayEmployeeData($conn) {
         echo "<tr>
                 <th>ID</th>
                 <th>First Name</th>
-                <th>Middle Name</th>
                 <th>Last Name</th>
                 <th>Age</th>
                 <th>Contact Number</th>
@@ -131,7 +130,6 @@ function displayEmployeeData($conn) {
             echo "<tr>";
             echo "<td>" . $row["ID"] . "</td>";
             echo "<td>" . $row["First_Name"] . "</td>";
-            echo "<td>" . $row["Middle_Name"] . "</td>";
             echo "<td>" . $row["Last_Name"] . "</td>";
             echo "<td>" . $row["Age"] . "</td>";
             echo "<td>" . $row["Contact_Number"] . "</td>";
@@ -139,11 +137,15 @@ function displayEmployeeData($conn) {
             echo "<td>" . $row["Address"] . "</td>";
             echo "<td>" . $row["Salary"] . "</td>";
             echo "<td>
-                    <form action='updateteacherdata.php' method='get'>
+                    <form action='update.php' method='get'>
                         <input type='hidden' name='id' value='" . $row["ID"] . "'>
                         <input type='hidden' name='fn' value='" . $row["First_Name"] . "'>
                         <input type='hidden' name='ln' value='" . $row["Last_Name"] . "'>
-                        <input type='hidden' name='jd' value='" . $row["Job_Description"] . "'>
+                        <input type='hidden' name='jd' value='" . $row["Age"] . "'>
+                        <input type='hidden' name='id' value='" . $row["Contact_Number"] . "'>
+                        <input type='hidden' name='fn' value='" . $row["Job_Description"] . "'>
+                        <input type='hidden' name='ln' value='" . $row["Address"] . "'>
+                        <input type='hidden' name='jd' value='" . $row["Salary"] . "'>
                         <input type='submit' value='Update' style='background-color: #007bff; color: #ffffff; border: none; padding: 8px 17px; border-radius: 4px; cursor: pointer;'>
                     </form>
                     <form method='post' action='".$_SERVER['PHP_SELF']."'>
@@ -168,7 +170,6 @@ function handleFormSubmissionEmployee($conn){
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ID = $_POST["ID"] ?? '';
         $First_Name = $_POST["First_Name"] ?? '';
-        $Middle_Name = $_POST["Middle_Name"] ?? '';
         $Last_Name = $_POST["Last_Name"] ?? '';
         $Age = $_POST["Age"] ?? '';
         $Contact_Number =  $_POST["Contact_Number"] ?? '';
@@ -179,9 +180,9 @@ function handleFormSubmissionEmployee($conn){
 
         // Validate the action and handle accordingly
         if ($action == "insert") {
-            $sql = "INSERT INTO employee (ID, First_Name, Middle_Name, Last_Name, Age, Contact_Number, Job_Description, Address, Salary) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO employee (ID, First_Name, Last_Name, Age, Contact_Number, Job_Description, Address, Salary) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssssssss", $ID, $First_Name, $Middle_Name, $Last_Name, $Age, $Contact_Number, $Job_Description, $Address, $Salary);
+            $stmt->bind_param("ssssssss", $ID, $First_Name, $Last_Name, $Age, $Contact_Number, $Job_Description, $Address, $Salary);
             if ($stmt->execute()) {
                 // Successful insertion
             } else {
@@ -190,10 +191,10 @@ function handleFormSubmissionEmployee($conn){
             $stmt->close();
         } elseif ($action == "update") {
             $newID = $_POST["newID"] ?? ''; 
-            $sql = "UPDATE employee SET ID=?, First_Name=?, Middle_Name=?, Last_Name=?, Job_Description=? WHERE ID=?";
+            $sql = "UPDATE employee SET ID=?, First_Name=?, Last_Name=?, Age=?, Contact_Number=?, Job_Description=?, Address=?, Salary=? WHERE ID=?";
         
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssss", $newID, $First_Name, $Middle_Name, $Last_Name, $Job_Description, $ID);
+            $stmt->bind_param("sssssssss", $newID, $First_Name, $Last_Name, $Age, $Contact_Number, $Job_Description, $Address, $Salary, $ID);
             if ($stmt->execute()) {
                 // Successful update
             } else {

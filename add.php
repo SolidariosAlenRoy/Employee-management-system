@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/addEmployee.css">
+    <link rel="stylesheet" href="styles/add.css">
     <title>Add Employee</title>
 </head> 
     <style>
@@ -93,10 +93,10 @@
             <input type="text" id="Last_Name" name="Last_Name" required>
 
             <label for="age">Age:</label>
-            <input type="text" id="age" name="age" required>
+            <input type="text" id="Age" name="Age" required>
 
             <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
+            <input type="text" id="Address" name="Address" required>
 
             <label for="contactNumber">Contact Number:</label>
             <input type="text" id="Contact_Number" name="Contact_Number" required>
