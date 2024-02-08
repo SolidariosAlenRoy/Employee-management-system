@@ -28,8 +28,8 @@
         .nav a {
             color: #fff;
             text-decoration: none;
-
-            margin: 0 250px;
+            margin: 0 290px;
+            padding: 1em;
         }
         .card {
             width: 50%;
