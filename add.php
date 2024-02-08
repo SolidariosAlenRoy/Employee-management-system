@@ -21,8 +21,7 @@
 
         .nav {
             display: flex;
-            justify-content: space-around;
-            padding: 1em;
+            justify-content: center;
         }
 
         .nav a {
@@ -30,6 +29,10 @@
             text-decoration: none;
             margin: 0 290px;
             padding: 1em;
+            margin: 0 250px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
         }
         .card {
             width: 50%;

@@ -7,9 +7,9 @@
     <title>View List</title>
 </head>
     <style>
-            body {
+        body {
             font-family: "Lato", sans-serif;
-            background-color: #f4eee1;
+            background-color: #999;
         }
         .header {
             background-color: #333;
