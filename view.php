@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: "Lato", sans-serif;
-            background-color: white;
+            background-color: #B8B8B8;
         }
 
         .container {
@@ -31,6 +31,7 @@
             color: #fff;
             text-decoration: none;
             padding: 10px 290px; 
+            font-weight: bold;
         }
 
         .nav a:hover {
@@ -96,7 +97,7 @@
 <header class="header-glowing">
     <nav class="nav">
         <a href="index.php">HOME</a>
-        <a href="add.php">Add Employee</a>
+        <a href="add.php">ADD EMPLOYEE</a>
     </nav>
 </header>
 </div>
