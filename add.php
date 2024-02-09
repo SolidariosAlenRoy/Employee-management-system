@@ -10,13 +10,18 @@
         
         body {
             font-family: "Lato", sans-serif;
-            background-color: #f4eee1;
+            background-color: #11100d;
         }
 
-        .header {
-            background-color: #333;
-            color: white;
-            padding: 1em;
+        .container {
+            width: 95%; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #333; 
+            border-radius: 10px;  
+            color: white; 
+            position: relative; 
+            overflow: visible; 
         }
 
         .nav {
@@ -27,22 +32,68 @@
         .nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 290px;
-            padding: 1em;
-            margin: 0 250px;
+            padding: 10px 290px; 
         }
+
         .nav a:hover {
             text-decoration: underline;
         }
+
+        .header-glowing::before,
+        .card::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: -2px;
+            background: linear-gradient(45deg, #e8f74d, #ff6600d9, #00ff66, #13ff13, #ad27ad, #bd2681, #6512b9, #ff3300de, #5aabde);
+            background-size: 400%;
+            width: calc(100% + 5px);
+            height: calc(100% + 5px);
+            z-index: -1;
+            animation: glower 20s linear infinite;
+            border-radius: 10px; 
+        }
+
+        @keyframes glower {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
         .card {
             width: 50%;
             margin: 2em auto;
-            background-color: grey;
+            background-color: #22211a;
+            color: white;
             padding: 2em;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; 
+            overflow: visible; 
         }
 
+        .card::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: -2px;
+            background: linear-gradient(45deg, #e8f74d, #ff6600d9, #00ff66, #13ff13, #ad27ad, #bd2681, #6512b9, #ff3300de, #5aabde);
+            background-size: 400%;
+            width: calc(100% + 5px);
+            height: calc(100% + 5px);
+            z-index: -1;
+            animation: glower 20s linear infinite;
+        
+        }
+        
         form {
             display: grid;
             grid-gap: 1em;
@@ -59,7 +110,7 @@
         }
 
         button {
-            background-color: #0f0;
+            background-color: #555;
             color: white;
             padding: 0.5em 1em;
             border: none;
@@ -68,20 +119,21 @@
         }
 
         button:hover {
-            background-color: #555;
+            background-color: #333227;
         }
     </style>
-    
 </head>
 <body>
-    <header class="header">
+
+<div class="container">
+    <header class="header-glowing">
         <nav class="nav">
             <a href="index.php">HOME</a>
             <a href="view.php">View List</a>
         </nav>
     </header>
-    
-    <div class="card">
+</div>
+<div class="card">
         <h2>Add Employee</h2>
         <form method="post" id="employeeForm" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <form method="post" id="employeeForm">

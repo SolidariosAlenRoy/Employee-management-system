@@ -6,48 +6,75 @@
 <style>
 body {
   font-family: "Lato", sans-serif;
-  background-color: #f4eee1;
+  background-color: whitesmoke;
 }
 
-.sidebar {
+.button-container {
+    text-align: center;
+    z-index: 1;
+    padding-top: 15%;
+}
+
+button {
+  width: 165px;
+  height: 62px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #100720;
+  transition: transform 0.5s ease; 
+  margin: 0 50px; 
+  transform: translateY(100px); 
+}
+
+button::after {
+  content: '';
+  width: 100%;
   height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
   left: 0;
-  background-color: #708090;
-  overflow-x: hidden;
-  padding-top: 16px;
-  text-align: justify;
+  top: 0;
 }
 
-.sidebar a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #111;
-  display: block;
+button:active { 
+  transform: scale(0.9) rotate(3deg);
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+}
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100px); 
+  }
+  to {
+    transform: translateY(0); 
+  }
 }
 
-.sidebar a:hover {
-  color: #f1f1f1;
+button:nth-child(1) {
+  animation: slideInFromBottom 0.5s ease 0.1s forwards; 
 }
 
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+button:nth-child(2) {
+  animation: slideInFromBottom 0.5s ease 0.2s forwards; 
+}
+
+button:nth-child(3) {
+  animation: slideInFromBottom 0.5s ease 0.3s forwards; 
 }
 </style>
 </head>
 <body>
 
-<div class="sidebar">
-  <a href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
-  <a href="add.php"><i class="fa fa-fw fa-plus"></i> Add Employee</a>
-  <a href="view.php"><i class="fa fa-fw fa-list"></i> View Employee</a>
+<div class="button-container">
+  <button onclick="location.href='index.php'"><i class="fa fa-fw fa-home"></i> Home</button>
+  <button onclick="location.href='add.php'"><i class="fa fa-fw fa-plus"></i> Add Employee</button>
+  <button onclick="location.href='view.php'"><i class="fa fa-fw fa-list"></i> View Employee</button>
 </div>
-
      
 </body>
 </html> 
