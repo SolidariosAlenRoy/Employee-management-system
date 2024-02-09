@@ -10,14 +10,16 @@
         
         body {
             font-family: "Lato", sans-serif;
-            background-color: #11100d;
+            font-weight: bold;
+            background-image: url(collage.png);
+            background-size: cover;
         }
-
+        
         .container {
             width: 95%; 
             margin: 0 auto; 
             padding: 20px; 
-            background-color: #333; 
+            background-color: #333;
             border-radius: 10px;  
             color: white; 
             position: relative; 
@@ -93,10 +95,14 @@
             animation: glower 20s linear infinite;
         
         }
-        
+
         form {
             display: grid;
             grid-gap: 1em;
+        }
+        h2{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
         label {
@@ -110,12 +116,17 @@
         }
 
         button {
+            width: 150px;
+            height: 50px;
             background-color: #555;
             color: white;
+            font-weight: bold;
+            font-size: 16px;
             padding: 0.5em 1em;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            
         }
 
         button:hover {
@@ -129,12 +140,12 @@
     <header class="header-glowing">
         <nav class="nav">
             <a href="index.php">HOME</a>
-            <a href="view.php">View List</a>
+            <a href="view.php">VIEW LIST</a>
         </nav>
     </header>
 </div>
 <div class="card">
-        <h2>Add Employee</h2>
+        <h2>ADD EMPLOYEE</h2>
         <form method="post" id="employeeForm" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <form method="post" id="employeeForm">
 
