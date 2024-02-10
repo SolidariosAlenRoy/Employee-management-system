@@ -9,7 +9,7 @@
 <style>
         body {
             font-family: "Lato", sans-serif;
-            background-color: #11100d;
+            background-image: url(collage.png);
         }
         .container {
             width: 95%; 
