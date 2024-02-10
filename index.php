@@ -10,6 +10,14 @@ body {
   background-image: url(indexBG.png);
   background-size: cover;
 }
+h1{
+  color: white;
+  text-align: center;
+  padding: 50px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
+}
 
 .button-container {
     text-align: center;
@@ -71,6 +79,7 @@ button:nth-child(3) {
 </style>
 </head>
 <body>
+  <h1>EMPLOYEE MANAGEMENT SYSTEM</h1>
 
 <div class="button-container">
   <button onclick="location.href='index.php'"><i class="fa fa-fw fa-home"></i> Home</button>
