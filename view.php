@@ -8,7 +8,8 @@
     <style>
         body {
             font-family: "Lato", sans-serif;
-            background-color: #B8B8B8;
+            background-image: url(viewBG.jpg);
+            background-size: cover;
         }
 
         .container {
@@ -28,7 +29,7 @@
         }
 
         .nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
             padding: 10px 290px; 
             font-weight: bold;
