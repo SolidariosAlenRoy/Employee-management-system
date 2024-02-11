@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>HOME</title>
 <style>
 
 body {
@@ -19,7 +20,7 @@ body {
 
 button {
   width: 165px;
-  height: 62px;
+  height: 50px;
   cursor: pointer;
   color: #fff;
   font-size: 17px;
@@ -42,6 +43,7 @@ button::after {
   position: absolute;
   left: 0;
   top: 0;
+  
 }
 
 button:active { 
