@@ -11,7 +11,6 @@ DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
   `ID` int(255) NOT NULL,
   `First_Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Middle_Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Last_Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Age` int(255) NOT NULL,
   `Contact_Number` int(255) NOT NULL,
@@ -21,4 +20,4 @@ CREATE TABLE `employee` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
--- 2024-02-07 13:22:23
+-- 2024-02-12 01:01:04
