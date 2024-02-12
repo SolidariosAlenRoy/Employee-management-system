@@ -13,10 +13,12 @@
             font-weight: bold;
             background-image: url(collage.png);
             background-size: cover;
+            padding: 0;
+            margin: 1;
         }
         
         .container {
-            width: 95%; 
+            width: 90%; 
             margin: 0 auto; 
             padding: 20px; 
             background-color: #333;
@@ -34,7 +36,7 @@
         .nav a {
             color: #fff;
             text-decoration: none;
-            padding: 10px 290px; 
+            padding: 10px 20px; 
         }
 
         .nav a:hover {
@@ -71,7 +73,7 @@
         }
 
         .card {
-            width: 50%;
+            width: 70%;
             margin: 2em auto;
             background-color: #22211a;
             color: white;
@@ -116,7 +118,7 @@
         }
 
         button {
-            width: 150px;
+            width: 100px;
             height: 50px;
             background-color: #555;
             color: white;
