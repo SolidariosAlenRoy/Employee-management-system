@@ -1,49 +1,11 @@
-<style> 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        
-        thead th {
-            background-color: #343a40;
-            color: #fff;
-            padding: 10px;
-            text-align: left;
-        }
-        
-        tbody td {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        
-        /* Checkbox Styles */
-        .checkbox-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        input[type="checkbox"] {
-            margin-bottom: 5px;
-        }
-        
-        /* Button Styles */
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }     
-        
-        button:hover {
-            background-color: #0056b3;
-        }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/common.css">
+</head>
+</html>
 <?php
 ini_set('memory_limit', '512M');
 
