@@ -91,7 +91,7 @@ function displayEmployeeData($conn) {
         echo "<tbody>";
 
         while ($row = $result->fetch_assoc()) {
-            $remainingCount = max(0, $employeeCount - 1);
+            $remainingCount = max(1, $employeeCount - 1);
             echo "<tr>";
             echo "<td>" . $remainingCount . "</td>";
             echo "<td>" . $row["ID"] ."</td>";
@@ -185,18 +185,19 @@ function handleFormSubmissionEmployee($conn) {
             echo "Cannot add more employees. Maximum limit reached.";
         }
     } elseif ($action == "update") {
-        // Update employee
-        $newID = $_POST["newID"] ?? ''; 
-        $sql = "UPDATE employee SET ID=?, First_Name=?, Last_Name=?, Age=?, Contact_Number=?, Job_Description=?, Address=?, Salary=? WHERE ID=?";
-    
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssssssss", $newID, $First_Name, $Last_Name, $Age, $Contact_Number, $Job_Description, $Address, $Salary, $ID);
-        if ($stmt->execute()) {
+            // Update employee
+            $newID = $_POST["newID"] ?? ''; 
+            $sql = "UPDATE employee SET ID=?, First_Name=?, Last_Name=?, Age=?, Contact_Number=?, Job_Description=?, Address=?, Salary=? WHERE ID=?";
+
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssssssss", $newID, $First_Name, $Last_Name, $Age, $Contact_Number, $Job_Description, $Address, $Salary, $ID);
+            if ($stmt->execute()) {
             // Successful update
-        } else {
-            echo "Error updating record: " . $stmt->error;
-        }
-        $stmt->close(); 
+            header('location: view.php');
+            } else {
+             echo "Error updating record: " . $stmt->error;
+            }
+            $stmt->close();
     } elseif ($action == "delete") {
         // Delete employee
         $sql = "DELETE FROM employee WHERE ID=?";
